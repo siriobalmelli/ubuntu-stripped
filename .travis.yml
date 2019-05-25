@@ -1,0 +1,7 @@
+---
+os:
+  - linux
+script:
+  - make
+  - sudo make install
+...
