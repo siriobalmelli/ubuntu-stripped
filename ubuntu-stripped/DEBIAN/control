@@ -1,0 +1,28 @@
+Package: ubuntu-stripped
+Version: 1.0
+Section: base
+Owners: ubuntu-stripped
+Priority: optional
+Architecture: all
+Conflicts: accountsservice,
+	apport,
+	crda,
+	installation-report,
+	iw,
+	laptop-detect,
+	open-iscsi,
+	popularity-contest,
+	ubuntu-report,
+	ufw,
+	whoopsie,
+	wireless-regdb,
+	xauth
+Maintainer: Sirio Balmelli <balmelli@eurovision.net>
+Description: Stipped-down Ubuntu Server
+	Remove all unnecessary packages and services for a stripped (minimalist)
+	Ubuntu server/VM installation, that doesn't have any:
+	- tracking/reporting to Canonical
+	- Wifi and ISO / IEC 3166 alpha2 support
+	- Unused DBUS services (like accounts, etc)
+	- laptop-specific features
+	- dumbed-down firewalls (e.g. ufw) ... real admins use iptables or nftables
