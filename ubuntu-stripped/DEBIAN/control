@@ -26,3 +26,4 @@ Description: Stipped-down Ubuntu Server
 	- Unused DBUS services (like accounts, etc)
 	- laptop-specific features
 	- dumbed-down firewalls (e.g. ufw) ... real admins use iptables or nftables
+	- useless bits and bobs (iSCSI, anyone?)

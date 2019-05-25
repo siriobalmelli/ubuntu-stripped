@@ -10,6 +10,7 @@ The goal is an Ubuntu server/VM installation that doesn't have any:
 - Unused DBUS services (like accounts, etc)
 - laptop-specific features
 - dumbed-down firewalls (e.g. ufw) ... real admins use iptables or nftables
+- useless bits and bobs (iSCSI, anyone?)
 
 ## Installing
 
