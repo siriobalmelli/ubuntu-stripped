@@ -20,7 +20,7 @@ rm master.tar.gz
 pushd ubuntu-stripped-master
 
 dpkg-deb --build ubuntu-stripped
-sudo apt-get install --reinstall ./ubuntu-stripped.deb
+sudo apt-get -y install --reinstall ./ubuntu-stripped.deb
 sudo apt-get -y autoremove
 
 popd
