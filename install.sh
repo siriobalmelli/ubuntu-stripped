@@ -21,7 +21,7 @@ pushd ubuntu-stripped-master
 
 dpkg-deb --build ubuntu-stripped
 sudo apt-get install --reinstall ./ubuntu-stripped.deb
-sudo apt-get autoremove
+sudo apt-get -y autoremove
 
 popd
 rm -rf ubuntu-stripped-master
