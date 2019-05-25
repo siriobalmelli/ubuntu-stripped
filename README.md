@@ -13,6 +13,27 @@ The goal is an Ubuntu server/VM installation that doesn't have any:
 
 ## Installing
 
-### From source:
+```bash
+# Alternative 1: fresh server install; one-liner
+wget -o stdout https://github.com/siriobalmelli/ubuntu-stripped/blob/master/install.sh | bash
+```
 
-*TODO*
+```bash
+# Alternative 2: fresh server install; but I want to know what's going on
+wget https://github.com/siriobalmelli/ubuntu-stripped/archive/master.tar.gz
+tar -zxf master.tar.gz
+rm master.tar.gz
+pushd ubuntu-stripped-master
+dpkg-deb --build ubuntu-stripped
+sudo apt-get install --reinstall ./ubuntu-stripped.deb
+popd
+rm -rf ubuntu-stripped-master
+```
+
+```bash
+# Alternative 3: I have Git and Make installed
+git clone https://github.com/siriobalmelli/ubuntu-stripped.git
+cd ubuntu-stripped
+make
+sudo make install
+```
