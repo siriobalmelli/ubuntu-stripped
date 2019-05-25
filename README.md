@@ -15,7 +15,7 @@ The goal is an Ubuntu server/VM installation that doesn't have any:
 
 ```bash
 # Alternative 1: fresh server install; one-liner
-wget -o stdout https://github.com/siriobalmelli/ubuntu-stripped/blob/master/install.sh | bash
+wget -q -O - https://raw.githubusercontent.com/siriobalmelli/ubuntu-stripped/master/install.sh | bash
 ```
 
 ```bash
@@ -26,6 +26,7 @@ rm master.tar.gz
 pushd ubuntu-stripped-master
 dpkg-deb --build ubuntu-stripped
 sudo apt-get install --reinstall ./ubuntu-stripped.deb
+sudo apt-get autoremove
 popd
 rm -rf ubuntu-stripped-master
 ```

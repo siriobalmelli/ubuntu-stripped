@@ -1,26 +1,27 @@
 #!/bin/bash
-# Build and install ubuntu-stripped on a barebones system with no Make.
+# Download, install and clean-up ubuntu-stripped on a barebones system.
 # (c) 2019 Sirio Balmelli
 
 set -e
-DEL_AFTER_INSTALL=
 
-# We are being run with:
-# 'wget -o stdout https://github.com/siriobalmelli/ubuntu-stripped/blob/master/install.sh | bash'
-if [[ $(basename $0) == 'bash' ]]; then
-	wget https://github.com/siriobalmelli/ubuntu-stripped/archive/master.tar.gz
-	tar -zxf master.tar.gz
-	rm master.tar.gz
-	pushd ubuntu-stripped-master
-	DEL_AFTER_INSTALL=1
+die()
+{
+	echo "$*" >&2
+	exit 1
+}
 
-# Repo already downloaded and being run inside repo
-else
-	pushd $(dirname $0)
-fi
+# We should be being called from this URL:
+URL=https://raw.githubusercontent.com/siriobalmelli/ubuntu-stripped/master/install.sh
+[[ $(basename $0) == 'bash' ]] || die "run me with 'wget -q -O - $URL | bash'"
+
+wget https://github.com/siriobalmelli/ubuntu-stripped/archive/master.tar.gz
+tar -zxf master.tar.gz
+rm master.tar.gz
+pushd ubuntu-stripped-master
 
 dpkg-deb --build ubuntu-stripped
 sudo apt-get install --reinstall ./ubuntu-stripped.deb
+sudo apt-get autoremove
 
 popd
-[[ $DEL_AFTER_INSTALL ]] && rm -rf ubuntu-stripped-master
+rm -rf ubuntu-stripped-master
