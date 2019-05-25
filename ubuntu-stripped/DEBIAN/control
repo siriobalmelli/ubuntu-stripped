@@ -17,7 +17,7 @@ Conflicts: accountsservice,
 	whoopsie,
 	wireless-regdb,
 	xauth
-Maintainer: Sirio Balmelli <balmelli@eurovision.net>
+Maintainer: Sirio Balmelli <sirio@b-ad.ch>
 Description: Stipped-down Ubuntu Server
 	Remove all unnecessary packages and services for a stripped (minimalist)
 	Ubuntu server/VM installation, that doesn't have any:
