@@ -1,9 +1,9 @@
-# ubuntu-stripped
+# ubuntu-stripped [![Build Status](https://travis-ci.org/siriobalmelli/ubuntu-stripped.svg?branch=master)](https://travis-ci.org/siriobalmelli/ubuntu-stripped)
 
 This is a Debian package which strips all unnecessary packages
-    and services from a Server (CLI) install.
+    and services from an Ubuntu Server (CLI) install.
 
-The goal is an Ubuntu server/VM installation that doesn't have any:
+The goal is an Ubuntu server/VM that doesn't have any:
 
 - tracking/reporting to Canonical
 - Wifi and ISO / IEC 3166 alpha2 support
