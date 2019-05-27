@@ -1,5 +1,5 @@
 Package: ubuntu-stripped
-Version: 1.0
+Version: 1.1
 Section: base
 Owners: ubuntu-stripped
 Priority: optional
@@ -10,6 +10,8 @@ Conflicts: accountsservice,
 	installation-report,
 	iw,
 	laptop-detect,
+	lvm2,
+	mdadm,
 	open-iscsi,
 	popularity-contest,
 	ubuntu-report,
@@ -26,4 +28,4 @@ Description: Stipped-down Ubuntu Server
 	- Unused DBUS services (like accounts, etc)
 	- laptop-specific features
 	- dumbed-down firewalls (e.g. ufw) ... real admins use iptables or nftables
-	- useless bits and bobs (iSCSI, anyone?)
+	- useless raid and filesystem crud (iSCSI, mdadm, lvm2)
